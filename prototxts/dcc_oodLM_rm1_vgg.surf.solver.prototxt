@@ -1,0 +1,15 @@
+train_net: "prototxts/dcc_oodLM_rm1_vgg.train.prototxt"
+random_seed: 1701
+average_loss: 100
+snapshot_prefix: "snapshots/dcc_oodLM_rm1_vgg.surf.solver"
+clip_gradients: 10
+max_iter: 110000
+stepsize: 20000
+base_lr: 0.01
+snapshot: 5000
+momentum: 0.9
+solver_mode: GPU
+lr_policy: "step"
+weight_decay: 0.0
+display: 10
+gamma: 0.5

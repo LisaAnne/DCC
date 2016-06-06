@@ -1,0 +1,29 @@
+layer {
+  name: "data"
+  type: "DummyData"
+  top: "data"
+  dummy_data_param {
+    data_filler {
+      type: "constant"
+      value: 1
+    }
+    shape {
+      dim: 10
+      dim: 471
+    }
+  }
+}
+layer {
+  name: "reshape-data"
+  type: "Reshape"
+  bottom: "data"
+  top: "reshape-data"
+  reshape_param {
+    shape {
+      dim: 1
+      dim: -1
+      dim: 471
+    }
+  }
+}
+
