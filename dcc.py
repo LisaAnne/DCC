@@ -2,6 +2,7 @@ import sys
 from utils import extract_classifiers 
 from eval.captioner import * 
 from eval import eval_sentences
+from train_captions import transfer_weights
 import argparse
 import pdb 
 from utils.config import *

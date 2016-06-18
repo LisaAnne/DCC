@@ -9,7 +9,7 @@ FLOAT_SIZE = 4
 
 class w2v:
   def __init__(self):
-    self.binFile="../word_similarity/vectors-cbow-bnc+ukwac+wikipedia.bin"
+    self.binFile="train_captions/vectors-cbow-bnc+ukwac+wikipedia.bin"
     self.vocab=None
     self.matrix=None
 

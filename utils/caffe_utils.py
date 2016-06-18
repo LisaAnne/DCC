@@ -1,8 +1,9 @@
 import sys
-sys.path.insert(0, '../../python/')
+import pdb
+from config import *
+sys.path.insert(0, pycaffe_dir)
 import caffe
 import numpy as np
-import pdb
 
 def build_transformer(image_dim):
   transformer = caffe.io.Transformer({'data': (1, 3, image_dim, image_dim)})
