@@ -2,17 +2,19 @@ Code for:
 
 Hendricks, Lisa Anne, et al. "Deep Compositional Captioning: Describing Novel Object Categories without Paired Training Data." CVPR (2016).
 
-Before using this code make sure you have:
+You should be able to replicate my results using this code.  I am still actively adding to it, so if something is unclear email me.
 
-(1) Lisa Anne Hendricks' recurrent branch of Caffe installed:  
-(2) The coco data and evaluation toolbox:  http://mscoco.org/dataset/#download
-(3) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge.
+To use my code, please do the following: 
 
-Next clone the DCC git repo: https://github.com/LisaAnne/DCC
+(1) Lisa Anne Hendricks' recurrent branch of Caffe installed: "https://github.com/LisaAnne/lisa-caffe-public/tree/lisa_recurrent".  My code will probably work well with other Caffe versions, but I have tested on this version.
+(2) Clone the DCC git repo: https://github.com/LisaAnne/DCC
+(3) Download the most recent version of my models, etc from this link: "https://drive.google.com/file/d/0B_U4GvmpCOecdVVGazhQbGRnY1E/view?usp=sharing"
+(4) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge.
 
-To begin, please run: ./setup.sh
+To begin, please run: ./setup.sh  
+  -- "path_to_coco_annotations" is the path to the MOSCOCO annotations on your machine.
 
-This will download extra data needed for DCC (e.g., the held-out MSCOCO dataset).  
+This will download extra data needed for DCC (e.g., the held-out MSCOCO dataset) as well as pre-trained models. 
 
 Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox, and imagenet images.
 
