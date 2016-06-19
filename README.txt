@@ -12,7 +12,6 @@ To use my code, please do the following:
 (4) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge.
 
 To begin, please run: ./setup.sh  
-  -- "path_to_coco_annotations" is the path to the MOSCOCO annotations on your machine.
 
 This will download extra data needed for DCC (e.g., the held-out MSCOCO dataset) as well as pre-trained models. 
 

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # A POSIX variable
 OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
@@ -17,7 +15,7 @@ function show_help {
   echo "-i: option to indicate whether or not to download MSOCO images."
 }
 
-while getopts "h?za:it" opt; do
+while getopts "h?z:a:it" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -25,7 +23,7 @@ while getopts "h?za:it" opt; do
         ;;
     z)  zip_file=$OPTARG
         ;;
-    a)  annotation_dl=0;
+    a)  annotation_dl=0
         annotation_folder=$OPTARG
         ;;
     i)  image_dl=0
@@ -38,6 +36,9 @@ done
 shift $((OPTIND-1))
 
 [ "$1" = "--" ] && shift
+
+echo "Annotation dl: $annotation_dl"
+echo "Image dl: $image_dl"
 
 if [ $annotation_dl -eq 1 ]
   then
@@ -74,8 +75,6 @@ if [ $tool_dl -eq 1 ]
 fi
 
 unzip $zip_file dcc_release
-
-
 
 mkdir snapshots
 mv $current_release_zip/trained_models/caption_models/* snapshots
