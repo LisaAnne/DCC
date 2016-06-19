@@ -8,3 +8,10 @@ cd $DIR
 git clone https://github.com/pdollar/coco.git
 cd coco/PythonAPI
 make
+
+echo "Finished downloading coco tools."
+
+cd ..
+git clone https://github.com/tylin/coco-caption.git
+echo "Finished downloading caption eval tools"
+

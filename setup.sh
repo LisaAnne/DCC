@@ -37,9 +37,6 @@ shift $((OPTIND-1))
 
 [ "$1" = "--" ] && shift
 
-echo "Annotation dl: $annotation_dl"
-echo "Image dl: $image_dl"
-
 if [ $annotation_dl -eq 1 ]
   then
     echo "Downloading MSCOCO annotations to $annotation_folder"
