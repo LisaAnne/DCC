@@ -15,11 +15,11 @@ def extract_features(model, model_weights, imagenet_ims=None, device=1, image_di
   net_type = 'vgg'
   
 
-  im_ids_train = open('../../data/coco/coco2014_cocoid.train.txt').readlines()
+  im_ids_train = open('utils/image_list/coco2014_cocoid.train.txt').readlines()
   im_ids_train = [int(im_id.strip()) for im_id in im_ids_train]
-  im_ids_val = open('../../data/coco/coco2014_cocoid.val_val.txt').readlines()
+  im_ids_val = open('utils/image_list/coco2014_cocoid.val_val.txt').readlines()
   im_ids_val = [int(im_id.strip()) for im_id in im_ids_val]
-  im_ids_test = open('../../data/coco/coco2014_cocoid.val_test.txt').readlines()
+  im_ids_test = open('utils/image_list/coco2014_cocoid.val_test.txt').readlines()
   im_ids_test = [int(im_id.strip()) for im_id in im_ids_test]
 
   train_ims = [coco_template %('train', 'train', im_id) for im_id in im_ids_train]
@@ -74,12 +74,4 @@ def extract_features(model, model_weights, imagenet_ims=None, device=1, image_di
     dset = f.create_dataset("features", data=features)
     f.close()
  
-
-
-
-
-
-
-
-
 
