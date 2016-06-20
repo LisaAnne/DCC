@@ -85,4 +85,4 @@ mkdir outfiles
 mkdir outfiles/transfer
 
 rm -r dcc_release 
-rm $zip_file
+#rm $zip_file
