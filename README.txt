@@ -9,7 +9,7 @@ To use my code, please do the following:
 (1) Lisa Anne Hendricks' recurrent branch of Caffe installed: "https://github.com/LisaAnne/lisa-caffe-public/tree/lisa_recurrent".  My code will probably work well with other Caffe versions, but I have tested on this version.
 (2) Clone the DCC git repo: https://github.com/LisaAnne/DCC
 (3) Download the most recent version of my models, etc from this link: "https://drive.google.com/file/d/0B_U4GvmpCOecdVVGazhQbGRnY1E/view?usp=sharing"
-(4) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge.
+(4) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge. To see which images I used, look at "utils/all_imagenet_images.txt" which includes path to imagenet image and label I used when training.
 
 To begin, please run: ./setup.sh
 
