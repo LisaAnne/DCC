@@ -11,11 +11,18 @@ To use my code, please do the following:
 (3) Download the most recent version of my models, etc from this link: "https://drive.google.com/file/d/0B_U4GvmpCOecdVVGazhQbGRnY1E/view?usp=sharing"
 (4) Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge.
 
-To begin, please run: ./setup.sh  
+To begin, please run: ./setup.sh
 
 This will download extra data needed for DCC (e.g., the held-out MSCOCO dataset) as well as pre-trained models. 
 
-Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox, and imagenet images.
+Use:
+	- z: path to the zip file containing my data/models
+	- i: if flag included, will not download coco images.
+        - a: if flag included, will not download coco train/val annotations.  Must indicate where coco annotations are on your machine
+        - t: if flag included, will not download the coco eval tools
+
+
+Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox (if you did not download these using setup.sh), and imagenet images.
 
 Now that everything is setup, we can evaluate the DCC model.
 
@@ -25,14 +32,14 @@ Now that everything is setup, we can evaluate the DCC model.
 	- "attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemode": image model trained with MSCOCO images EXCEPT for objects which are held outduring paired training.  These categories are trained with ImageNet data.
 	- "vgg_multilabel_FT_iter_100000.caffemodel":  image model trained on all MSCOCO images and over 600 ImageNet objects not in MSCOCO
 
-	The code to train these models will be coming soon. 
+	The code to train these models will be coming soon, but you can use all my pretrained models. 
 
 2.  The next step in DCC is to train language models.  Pre-trained models are in "trained_models/language_models".
 	- "mrnn.direct_iter_110000.caffemodel": language model trained on MSCOCO text
 	- "mrnn.lm.direct_surf_lr0.01_iter_120000.caffemodel": language model trained on WebCorbus text
 	- "mrnn.lm.direct_imtextyt_lr0.01_iter_120000.caffemodel": langauge model trained on Caption text
 
-	The code to train these models will be coming soon 
+	The code to train these models will be coming soon, but you can use all my pretrained models. 
  
 3.  The final training step is to train the caption model.  You can find the prototxts to train the caption models in "prototxts".  To speed up training, I pre-extract image features.  Please look at "extract_features.sh" to see how to extract features.  Train the caption models using one of the following bash scripts:
 	1.  "run_dcc_coco_baseline_vgg.sh": model with pair supervision
