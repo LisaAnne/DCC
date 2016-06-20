@@ -3,6 +3,7 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 
 # Initialize our own variables:
 zip_file="release_DCC_06182016.zip"
+unzip_file="release_DCC"
 annotation_dl=1
 annotation_folder="annotations"
 image_dl=1
@@ -41,7 +42,7 @@ if [ $annotation_dl -eq 1 ]
   then
     echo "Downloading MSCOCO annotations to $annotation_folder"
     mscoco_annotation_file="annotations-1-0-3/captions_train-val2014.zip"
-    wget http://msvocds.blob.core.windows.net/annotations-1-0-3/$mscoco_annotation_file
+    wget http://msvocds.blob.core.windows.net/$mscoco_annotation_file
     unzip captions_train-val2014.zip 
   else
     echo "Not downloading MSCOCO annotations.  Annotations already in $annotation_folder"
@@ -71,18 +72,18 @@ if [ $tool_dl -eq 1 ]
     echo "Not downloading MSCOCO eval_tools."
 fi
 
-unzip $zip_file dcc_release
+unzip $zip_file 
 
 mkdir snapshots
-mv $current_release_zip/trained_models/caption_models/* snapshots
-mv $current_release_zip/trained_models/classifiers/* snapshots
-mv $current_release_zip/trained_models/language_models/* snapshots
-mv $current_release_zip/utils/image_list utils
-mv $current_release_zip/vectors-cbow-bnc+ukwac+wikipedia.bin train_captions
-mv $current_release_zip/annotations_DCC $annotation_folder
+mv $unzip_file/trained_models/caption_models/* snapshots
+mv $unzip_file/trained_models/classifiers/* snapshots
+mv $unzip_file/trained_models/language_models/* snapshots
+mv $unzip_file/utils/image_list utils
+mv $unzip_file/utils/vectors-cbow-bnc+ukwac+wikipedia.bin train_captions
+mv $unzip_file/annotations_DCC/* $annotation_folder
 
 mkdir outfiles
 mkdir outfiles/transfer
 
-rm -r dcc_release 
+rm -r $unzip_file 
 #rm $zip_file
