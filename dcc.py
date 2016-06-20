@@ -62,7 +62,7 @@ if __name__ == "__main__":
   parser.add_argument("--language_model",type=str)
   parser.add_argument("--model_weights",type=str)
   parser.add_argument("--image_list", type=str)
-  parser.add_argument("--imagenet_images",type=str) #extract_features
+  parser.add_argument("--imagenet_images",type=str, default=None) #extract_features
   parser.add_argument("--lexical_feature",type=str, default='probs') #name of layer to extract
   parser.add_argument("--orig_attributes",type=str, default='')
   parser.add_argument("--all_attributes",type=str, default='')
@@ -80,7 +80,7 @@ if __name__ == "__main__":
   parser.add_argument("--language_feature", type=str, default='predict')
   parser.add_argument("--image_feature", type=str, default='data')
 
-  parser.add_argument("--device",type=int, default=1)
+  parser.add_argument("--device",type=int, default=0)
   parser.add_argument("--image_dim",type=int, default=227)
   parser.add_argument("--batch_size",type=int, default=10)
   parser.add_argument("--num_transfer",type=int, default=1)
