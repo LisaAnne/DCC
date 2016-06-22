@@ -14,7 +14,7 @@ To use my code, please make sure you have the following:
 
 To begin, please run: ./setup.sh
 
-This will download extra data needed for DCC (e.g., the held-out MSCOCO dataset) as well as pre-trained models. 
+This will download data needed for DCC (MSCOCO) and properly setup the folder to run DCC. 
 
 Use:
 	- z: path to the zip file containing my data/models
@@ -43,13 +43,13 @@ Now that everything is setup, we can evaluate the DCC model.
 	The code to train these models will be coming soon, but you can use all my pretrained models. 
  
 3.  The final training step is to train the caption model.  You can find the prototxts to train the caption models in "prototxts".  To speed up training, I pre-extract image features.  Please look at "extract_features.sh" to see how to extract features.  Train the caption models using one of the following bash scripts:
-	1.  "run_dcc_coco_baseline_vgg.sh": model with pair supervision
-	2.  "run_dcc_coco_rm1_vgg.sh": direct transfer model with in domain text pre-training and in domain image pre-training
-	3.  "run_dcc_coco_rm1_vgg.delta.sh": delta transfer model with in domain text pre-training and in domain image pre-training
-	4.  "run_dcc_imagenet_rm1_vgg.sh": direct transfer model with in domain text pre-training and out of domain image pre-training
-	5.  "run_dcc_imagenet_rm1_vgg.im2txt.sh": direct transfer model with out of domain text pre-training with Caption txt and out of domain image pre-training
-	6.  "run_dcc_imagenet_rm1_vgg.sh": direct transfer model with out of domain text pre-training with WebCorpus and out of domain image pre-training
-        7.  "run_dcc_imagenet_sentences_vgg.sh": direct transfer model for describing Imagnet objects
+	- "run_dcc_coco_baseline_vgg.sh": model with pair supervision
+	- "run_dcc_coco_rm1_vgg.sh": direct transfer model with in domain text pre-training and in domain image pre-training
+	- "run_dcc_coco_rm1_vgg.delta.sh": delta transfer model with in domain text pre-training and in domain image pre-training
+	- "run_dcc_imagenet_rm1_vgg.sh": direct transfer model with in domain text pre-training and out of domain image pre-training
+	- "run_dcc_imagenet_rm1_vgg.im2txt.sh": direct transfer model with out of domain text pre-training with Caption txt and out of domain image pre-training
+	- "run_dcc_imagenet_rm1_vgg.sh": direct transfer model with out of domain text pre-training with WebCorpus and out of domain image pre-training
+        - "run_dcc_imagenet_sentences_vgg.sh": direct transfer model for describing Imagnet objects
 
     Note that I include all my caption models in "snapshots", so you do not have to retrain these models yourself!
 
