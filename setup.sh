@@ -75,6 +75,8 @@ fi
 unzip $zip_file 
 
 mkdir snapshots
+mkdir results
+mkdir results/generated_sentences
 mv $unzip_file/trained_models/caption_models/* snapshots
 mv $unzip_file/trained_models/classifiers/* snapshots
 mv $unzip_file/trained_models/language_models/* snapshots
