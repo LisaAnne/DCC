@@ -8,7 +8,7 @@ layer {
   python_param {
     module: "python_data_layers"
     layer: "pairedCaptionData"
-    param_str: "{'caption_json': 'annotations_DCC/captions_no_caption_rm_eightCluster_train2014.json', 'feature_file': 'lexical_features/vgg_feats.attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemodel.train.h5', 'vocabulary': 'utils/vocabulary/yt_coco_surface_80k_vocab.txt', 'batch_size': 100, 'stream_size': 20, 'top_names': ['input_sentence', 'target_sentence', 'cont_sentence', 'data']}"
+    param_str: "{'caption_json': 'annotations/captions_no_caption_rm_eightCluster_train2014.json', 'feature_file': 'lexical_features/vgg_feats.attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemodel.train.h5', 'vocabulary': 'utils/vocabulary/yt_coco_surface_80k_vocab.txt', 'batch_size': 100, 'stream_size': 20, 'top_names': ['input_sentence', 'target_sentence', 'cont_sentence', 'data']}"
   }
 }
 layer {

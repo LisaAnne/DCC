@@ -22,6 +22,8 @@ Use:
         - a: if flag included, will not download coco train/val annotations.  Must indicate where coco annotations are on your machine
         - t: if flag included, will not download the coco eval tools
 
+For example, if you already have the COCO annotations, images and eval tools downloaded, run:
+	./setup.sh -z PATH_TO_ZIP -a PATH_TO_COCO_ANNOTATIONS -i -t
 
 Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox (if you did not download these using setup.sh), and imagenet images.
 

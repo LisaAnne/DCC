@@ -14,6 +14,7 @@ function show_help {
   echo "-z: option which indicates path for downloaded zip file is.  Default is $zip_file."
   echo "-a: option which indicates whether or not to download MSCOCO annotations.  If MSCOCO annotations already downloaded, need path to annotations to properly setup folders.  Default path is $annotation-folder"
   echo "-i: option to indicate whether or not to download MSOCO images."
+  echo "-t: option to indicate whether or not to download MSOCO tools."
 }
 
 while getopts "h?z:a:it" opt; do
@@ -57,7 +58,7 @@ if [ $image_dl -eq 1 ]
     mscoco_train_image_file="coco2014/val2014.zip"
     wget http://msvocds.blob.core.windows.net/$mscoco_train_image_file
     unzip val2014.zip
-    mkdir $image_folder
+    mkdir -p $image_folder
     mv train2014 $image_folder
     mv val2014 $image_folder 
   else
@@ -74,9 +75,9 @@ fi
 
 unzip $zip_file 
 
-mkdir snapshots
-mkdir results
-mkdir results/generated_sentences
+mkdir -p snapshots
+mkdir -p results
+mkdir -p results/generated_sentences
 mv $unzip_file/trained_models/caption_models/* snapshots
 mv $unzip_file/trained_models/classifiers/* snapshots
 mv $unzip_file/trained_models/language_models/* snapshots
@@ -84,8 +85,8 @@ mv $unzip_file/utils/image_list/* utils/image_list
 mv $unzip_file/utils/vectors-cbow-bnc+ukwac+wikipedia.bin train_captions
 mv $unzip_file/annotations_DCC/* $annotation_folder
 
-mkdir outfiles
-mkdir outfiles/transfer
+mkdir -p outfiles
+mkdir -p outfiles/transfer
 
-rm -r $unzip_file 
+#rm -r $unzip_file 
 #rm $zip_file
