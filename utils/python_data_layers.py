@@ -2,7 +2,10 @@
 
 import pdb
 import sys
-from config import *
+try:
+  from config import *
+except:
+  raise Exception("Please setup config file (see instructions)")
 sys.path.append(pycaffe_dir)
 import caffe
 import io

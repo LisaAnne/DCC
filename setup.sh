@@ -78,9 +78,7 @@ unzip $zip_file
 mkdir -p snapshots
 mkdir -p results
 mkdir -p results/generated_sentences
-mv $unzip_file/trained_models/caption_models/* snapshots
-mv $unzip_file/trained_models/classifiers/* snapshots
-mv $unzip_file/trained_models/language_models/* snapshots
+mv $unzip_file/trained_models .
 mv $unzip_file/utils/image_list/* utils/image_list
 mv $unzip_file/utils/vectors-cbow-bnc+ukwac+wikipedia.bin train_captions
 mv $unzip_file/annotations_DCC/* $annotation_folder
