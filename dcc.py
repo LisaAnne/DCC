@@ -23,7 +23,7 @@ def generate_coco(args):
   language_model = models_root + args.language_model
   vocab = vocab_root + args.vocab
   if args.precomputed_features:
-    precomputed_feats = lexical_features_root + args.precomputed_features
+    precomputed_feats = feature_dir + args.precomputed_features
   else:
     precomputed_feats = args.precomputed_features
 
@@ -44,7 +44,7 @@ def generate_imagenet(args):
   image_model = models_root + args.image_model
   language_model = models_root + args.language_model
   vocab = vocab_root + args.vocab
-  precomputed_feats = lexical_features_root + args.precomputed_features
+  precomputed_feats = feature_dir + args.precomputed_features
 
   image_list = open_txt(image_list_root + args.image_list)
 
