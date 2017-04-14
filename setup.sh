@@ -116,7 +116,7 @@ cd ..
 
 #get utils for DCC
 echo "Downloading dcc utils..."
-cd $models_folder 
+cd $tools_folder 
 for i in "${dcc_utils[@]}"
 do 
   echo "Downloading: " $i
