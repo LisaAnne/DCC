@@ -1,5 +1,7 @@
 # Deep Compositional Captioning
 
+I am currently doing some spring cleaning, which includes updating this code to make it easier to use based on questions from those who have tried to use it.  Please look at the "DCC_update" branch, and email if you have any problems.
+
 Hendricks, Lisa Anne, et al. "Deep Compositional Captioning: Describing Novel Object Categories without Paired Training Data." CVPR (2016).
 
 [Find the paper here.](https://arxiv.org/abs/1511.05284)
