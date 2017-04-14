@@ -5,6 +5,8 @@
 
 #TODO: Download imagenet images
 
+home_dir=$(pwd)
+
 # Initialize variables:
 download_mscoco_annotations=0
 download_mscoco_images=0
@@ -102,7 +104,7 @@ do
   echo "Downloading: " $i
   wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/annotations_DCC/$i
 done
-cd ..
+cd $home_dir 
 
 #get pretrained models for DCC
 echo "Downloading dcc models..."
@@ -112,7 +114,7 @@ do
   echo "Downloading: " $i
   wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/trained_models/$i
 done
-cd ..
+cd $home_dir 
 
 #get utils for DCC
 echo "Downloading dcc utils..."
@@ -122,7 +124,7 @@ do
   echo "Downloading: " $i
   wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/$i
 done
-cd ..
+cd $home_dir 
 
 mv utils/image_list/vectors-cbow-bnc+ukwac+wikipedia.bin dcc_transfer
 
@@ -137,7 +139,7 @@ do
   echo "Downloading: " $i
   wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/generated_sentences/$i
 done
-cd ../..
+cd $home_dir 
 
 mkdir -p outfiles
 mkdir -p outfiles/transfer
@@ -148,4 +150,5 @@ git clone https://github.com/LisaAnne/python_tools utils/tools
 
 cd eval
 ln -s ../utils/tools .
-cd .. 
+cd $home_dir 
+
