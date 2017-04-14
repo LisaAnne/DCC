@@ -37,6 +37,8 @@ The script will also download my annotations used for my zero-shot splits, my mo
 
 Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox (if you did not download these using setup.sh), and imagenet images.
 
+Once you have setup your paths, run "transfer.sh" and "transfer_delta.sh" to run the transfer code.  **You will not get the same results as me if you do not run the transfer code.**
+
 Now that everything is setup, we can evaluate the DCC model.  
 
 Please look at "GenerateDescriptions.ipynb" for an example.  Some details follow:
