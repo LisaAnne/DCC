@@ -146,4 +146,6 @@ mkdir -p outfiles/transfer
 git clone git@github.com:LisaAnne/sentence_gen_tools.git eval
 git clone https://github.com/LisaAnne/python_tools utils/tools
 
-ln -s utils/tools eval
+cd eval
+ln -s ../utils/tools .
+cd .. 
