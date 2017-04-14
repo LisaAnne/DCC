@@ -14,13 +14,11 @@ download_mscoco_tools=0
 
 annotation_folder="annotations"
 image_folder="images/coco_images"
-tools_folder="utils/coco_tools"
 models_folder="snapshots"
 gen_setneces_folder="results/generated_sentences"
 
 dcc_data=( "captions_no_caption_rm_eightCluster_train2014.json" "captions_split_set_bottle_val_test_novel2014.json" "captions_split_set_bottle_val_test_train2014.json" "captions_split_set_bottle_val_val_novel2014.json" "captions_split_set_bottle_val_val_train2014.json" "captions_split_set_bus_val_test_novel2014.json" "captions_split_set_bus_val_test_train2014.json" "captions_split_set_bus_val_val_novel2014.json" "captions_split_set_bus_val_val_train2014.json" "captions_split_set_couch_val_test_novel2014.json" "captions_split_set_couch_val_test_train2014.json" "captions_split_set_couch_val_val_novel2014.json" "captions_split_set_couch_val_val_train2014.json" "captions_split_set_microwave_val_test_novel2014.json" "captions_split_set_microwave_val_test_train2014.json" "captions_split_set_microwave_val_val_novel2014.json" "captions_split_set_microwave_val_val_train2014.json" "captions_split_set_pizza_val_test_novel2014.json" "captions_split_set_pizza_val_test_train2014.json" "captions_split_set_pizza_val_val_novel2014.json" "captions_split_set_pizza_val_val_train2014.json" "captions_split_set_racket_val_test_novel2014.json" "captions_split_set_racket_val_test_train2014.json" "captions_split_set_racket_val_val_novel2014.json" "captions_split_set_racket_val_val_train2014.json" "captions_split_set_suitcase_val_test_novel2014.json" "captions_split_set_suitcase_val_test_train2014.json" "captions_split_set_suitcase_val_val_novel2014.json" "captions_split_set_suitcase_val_val_train2014.json" "captions_split_set_zebra_val_test_novel2014.json" "captions_split_set_zebra_val_test_train2014.json" "captions_split_set_zebra_val_val_novel2014.json" "captions_split_set_zebra_val_val_train2014.json" "captions_val_test2014.json" "captions_val_val2014.json" )
-dcc_models=( "caption_models/attributes_JJ100_NN300_VB100_eightClusters_captions_cocoImages_1026_ftLM_1110_vgg_iter_5000.caffemodel" "caption_models/attributes_JJ100_NN300_VB100_eightClusters_imagenetImages_captions_freezeLMPretrain_vgg_iter_50000.caffemodel" "caption_models/dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.caffemodel" "caption_models/dcc_oodLM_rm1_vgg.im2txt.471.solver_0409_iter_110000.caffemodel" "caption_models/dcc_oodLM_rm1_vgg.surf.471.solver_0409_iter_110000.caffemodel" "caption_models/vgg_feats.vgg_multilabel_FT_iter_100000_imagenetSentences_iter_110000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_allObjects_coco_vgg_0111_iter_80000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel" "classifiers/vgg_multilabel_FT_iter_100000.caffemodel" "language_models/mrnn.direct_iter_110000.caffemodel" "language_models/mrnn.lm.direct_surf_lr0.01_iter_120000.caffemodel" "language_models/mrnn.lm.direct_imtextyt_lr0.01_iter_120000.caffemodel" )
-dcc_utils=( "image_list/coco2014_cocoid.train.txt" "image_list/coco2014_cocoid.val_test.txt" "image_list/coco2014_cocoid.val_val.txt" "image_list/test_imagenet_images.txt" "image_list/train_imagenet_images.txt" "vectors-cbow-bnc+ukwac+wikipedia.bin" "vocabulary/vocabulary.txt" "vocabulary/yt_coco_surface_80k_vocab.txt" )
+dcc_models=( "caption_models/attributes_JJ100_NN300_VB100_eightClusters_captions_cocoImages_1026_ftLM_1110_vgg_iter_5000.caffemodel" "caption_models/attributes_JJ100_NN300_VB100_eightClusters_imagenetImages_captions_freezeLMPretrain_vgg_iter_50000.caffemodel" "caption_models/dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.caffemodel" "caption_models/dcc_oodLM_rm1_vgg.im2txt.471.solver_0409_iter_110000.caffemodel" "caption_models/dcc_oodLM_rm1_vgg.surf.471.solver_0409_iter_110000.caffemodel" "caption_models/vgg_feats.vgg_multilabel_FT_iter_100000_imagenetSentences_iter_110000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_allObjects_coco_vgg_0111_iter_80000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemodel" "classifiers/attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel" "classifiers/vgg_multilabel_FT_iter_100000.caffemodel" "language_models/mrnn.direct_iter_110000.caffemodel" "language_models/mrnn.lm.direct_surf_lr0.01_iter_120000.caffemodel" "language_models/mrnn.lm.direct_imtextyt_lr0.01_iter_120000.caffemodel" "caption_models/dcc_coco_rm1_vgg.delta_freezeLM_iter_50000.caffemodel" "caption_models/dcc_coco_rm1_vgg.delta_iter_5000.caffemodel" )
 dcc_sentences=( "dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.caffemodel_coco2014_cocoid.val_test.txt.json" "dcc_oodLM_rm1_vgg.surf.471.solver_0409_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel_coco2014_cocoid.val_test.txt.json" "vgg_feats.vgg_multilabel_FT_iter_100000_imagenetSentences_iter_110000.transfer_words_imagenet.txt_closeness_embedding.caffemodel_test_imagenet_images.txt.json" )
 
 show_help () {
@@ -116,14 +114,11 @@ do
 done
 cd $home_dir 
 
-#get utils for DCC
-echo "Downloading dcc utils..."
-cd $tools_folder 
-for i in "${dcc_utils[@]}"
-do 
-  echo "Downloading: " $i
-  wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/$i
-done
+#get word2vec 
+echo "Downloading dcc word2vec..."
+cd dcc_transfer 
+echo "Downloading: " $i
+wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/vectors-cbow-bnc+ukwac+wikipedia.bin
 cd $home_dir 
 
 mv utils/image_list/vectors-cbow-bnc+ukwac+wikipedia.bin dcc_transfer
