@@ -136,6 +136,7 @@ cd ..
 mv utils/image_list/vectors-cbow-bnc+ukwac+wikipedia.bin dcc_transfer
 
 mkdir -p results/generated_sentences 
+cd results/generated_sentences
 
 #get generated sentences 
 echo "Downloading generated sentences..."
@@ -143,12 +144,12 @@ cd $models_folder
 for i in "${dcc_sentences[@]}"
 do 
   echo "Downloading: " $i
-  if [ ! -f $i];
+  if [ ! -f results/generated_sentences/$i];
   then 
     wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/generated_sentences/$i
   fi
 done
-cd ..
+cd ../..
 
 mkdir -p outfiles
 mkdir -p outfiles/transfer
