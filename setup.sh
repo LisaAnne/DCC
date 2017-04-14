@@ -158,7 +158,3 @@ git clone git@github.com:LisaAnne/sentence_gen_tools.git eval
 git clone https://github.com/LisaAnne/python_tools utils/tools
 
 ln -s utils/tools eval
-
-#Run transfer code; now all pretrained models should be saved
-./transfer.sh
-./transfer_delta.sh
