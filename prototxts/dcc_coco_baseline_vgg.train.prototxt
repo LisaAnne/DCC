@@ -1,0 +1,161 @@
+layer {
+  name: "data"
+  type: "Python"
+  top: "input_sentence"
+  top: "target_sentence"
+  top: "cont_sentence"
+  top: "data"
+  python_param {
+    module: "python_data_layers"
+    layer: "pairedCaptionData"
+    param_str: "{'caption_json': 'annotations/captions_train2014.json', 'feature_file': 'lexical_features/vgg_feats.attributes_JJ100_NN300_VB100_allObjects_coco_vgg_0111_iter_80000.caffemodel.train.h5', 'vocabulary': 'utils/vocabulary/vocabulary.txt', 'batch_size': 100, 'stream_size': 20, 'top_names': ['input_sentence', 'target_sentence', 'cont_sentence', 'data']}"
+  }
+}
+layer {
+  name: "reshape-data"
+  type: "Reshape"
+  bottom: "data"
+  top: "reshape-data"
+  reshape_param {
+    shape {
+      dim: 1
+      dim: -1
+      dim: 471
+    }
+  }
+}
+layer {
+  name: "embedding"
+  type: "Embed"
+  bottom: "input_sentence"
+  top: "embedding"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  embed_param {
+    num_output: 512
+    input_dim: 8801
+    bias_term: false
+  }
+}
+layer {
+  name: "embedding2"
+  type: "InnerProduct"
+  bottom: "embedding"
+  top: "embedding2"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 512
+    axis: 2
+  }
+}
+layer {
+  name: "lstm1"
+  type: "LSTM"
+  bottom: "embedding2"
+  bottom: "cont_sentence"
+  top: "lstm1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  recurrent_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "concat-lm"
+  type: "Concat"
+  bottom: "embedding2"
+  bottom: "lstm1"
+  top: "concat-lm"
+  concat_param {
+    axis: 2
+  }
+}
+layer {
+  name: "predict-lm"
+  type: "InnerProduct"
+  bottom: "concat-lm"
+  top: "predict-lm"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  inner_product_param {
+    num_output: 8801
+    weight_filler {
+      type: "uniform"
+      min: -0.08
+      max: 0.08
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+    axis: 2
+  }
+}
+layer {
+  name: "tile-data"
+  type: "Tile"
+  bottom: "reshape-data"
+  top: "tile-data"
+  tile_param {
+    axis: 0
+    tiles: 20
+  }
+}
+layer {
+  name: "predict-im"
+  type: "InnerProduct"
+  bottom: "tile-data"
+  top: "predict-im"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  inner_product_param {
+    num_output: 8801
+    bias_term: false
+    weight_filler {
+      type: "uniform"
+      min: -0.08
+      max: 0.08
+    }
+    axis: 2
+  }
+}
+layer {
+  name: "predict-multimodal"
+  type: "Eltwise"
+  bottom: "predict-lm"
+  bottom: "predict-im"
+  top: "predict-multimodal"
+  eltwise_param {
+    operation: SUM
+  }
+}
+layer {
+  name: "cross-entropy-loss"
+  type: "SoftmaxWithLoss"
+  bottom: "predict-multimodal"
+  bottom: "target_sentence"
+  top: "cross-entropy-loss"
+  loss_weight: 20
+  loss_param {
+    ignore_label: -1
+  }
+  softmax_param {
+    axis: 2
+  }
+}
+

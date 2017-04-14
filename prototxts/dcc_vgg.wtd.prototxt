@@ -1,0 +1,179 @@
+layer {
+  name: "cont_sentence"
+  type: "DummyData"
+  top: "cont_sentence"
+  dummy_data_param {
+    data_filler {
+      type: "constant"
+      value: 1
+    }
+    shape {
+      dim: 1
+      dim: 100
+    }
+  }
+}
+layer {
+  name: "input_sentence"
+  type: "DummyData"
+  top: "input_sentence"
+  dummy_data_param {
+    data_filler {
+      type: "constant"
+      value: 1
+    }
+    shape {
+      dim: 1
+      dim: 100
+      dim: 1
+    }
+  }
+}
+layer {
+  name: "image_features"
+  type: "DummyData"
+  top: "image_features"
+  dummy_data_param {
+    data_filler {
+      type: "constant"
+      value: 1
+    }
+    shape {
+      dim: 100
+      dim: 471
+    }
+  }
+}
+layer {
+  name: "embedding"
+  type: "Embed"
+  bottom: "input_sentence"
+  top: "embedding"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  embed_param {
+    num_output: 512
+    input_dim: 8801
+    bias_term: false
+  }
+}
+layer {
+  name: "embedding2"
+  type: "InnerProduct"
+  bottom: "embedding"
+  top: "embedding2"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 512
+    axis: 2
+  }
+}
+layer {
+  name: "lstm1"
+  type: "LSTM"
+  bottom: "embedding2"
+  bottom: "cont_sentence"
+  top: "lstm1"
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  recurrent_param {
+    num_output: 512
+  }
+}
+layer {
+  name: "concat-lm"
+  type: "Concat"
+  bottom: "embedding2"
+  bottom: "lstm1"
+  top: "concat-lm"
+  concat_param {
+    axis: 2
+  }
+}
+layer {
+  name: "predict-lm"
+  type: "InnerProduct"
+  bottom: "concat-lm"
+  top: "predict-lm"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  inner_product_param {
+    num_output: 8801
+    weight_filler {
+      type: "uniform"
+      min: -0.08
+      max: 0.08
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+    axis: 2
+  }
+}
+layer {
+  name: "reshape-data"
+  type: "Reshape"
+  bottom: "image_features"
+  top: "reshape-data"
+  reshape_param {
+    axis: 0 
+    num_axes: 0 
+    shape {
+      dim: 1
+    }
+  }
+}
+layer {
+  name: "predict-im"
+  type: "InnerProduct"
+  bottom: "reshape-data"
+  top: "predict-im"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  inner_product_param {
+    num_output: 8801
+    bias_term: false
+    weight_filler {
+      type: "uniform"
+      min: -0.08
+      max: 0.08
+    }
+    axis: 2
+  }
+}
+layer {
+  name: "predict-multimodal"
+  type: "Eltwise"
+  bottom: "predict-lm"
+  bottom: "predict-im"
+  top: "predict-multimodal"
+  eltwise_param {
+    operation: SUM
+  }
+}
+layer {
+  name: "predict"
+  type: "Softmax"
+  bottom: "predict-multimodal"
+  top: "predict"
+  softmax_param {
+    axis: 2
+  }
+}
+
