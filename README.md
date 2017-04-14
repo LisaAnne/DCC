@@ -73,7 +73,11 @@ Please look at "GenerateDescriptions.ipynb" for an example.  Some details follow
 
 6.  Generating descriptions for ImageNet images.  Look at generate_imagenet.sh.
 
-If you just want to compare to my descritions, look in the "generated_sentences" folder.  
+If you just want to compare to my descritions, look in the "results/generated_sentences" folder. You will find:
+
+1.  dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.caffemodel_coco2014_cocoid.val_test.txt.json: DCC with in domain text and in domain images.
+2. dcc_oodLM_rm1_vgg.surf.471.solver_0409_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel_coco2014_cocoid.val_test.txt.json: DCC with out of domain text and out of domain images
+3. vgg_feats.vgg_multilabel_FT_iter_100000_imagenetSentences_iter_110000.transfer_words_imagenet.txt_closeness_embedding.caffemodel_test_imagenet_images.txt.json: DCC images for ImageNet images.
 
 Finally, if you are working on integrating novel words into captions, I suggest you also check out the following papers:
 
