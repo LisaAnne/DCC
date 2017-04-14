@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # POSIX
 
 #This was tested on a Linux system.  You may run into issues if you try to do this on another system (e.g, MAC OS does not have "wget")
