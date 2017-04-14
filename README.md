@@ -73,7 +73,7 @@ Please look at "GenerateDescriptions.ipynb" for an example.  Some details follow
 
 6.  Generating descriptions for ImageNet images.  Look at generate_imagenet.sh.
 
-If you would like to compare to my descriptions, please look into the ''generated_sentences'' folder.  
+If you just want to compare to my descritions, look in the "generated_sentences" folder.  
 
 Finally, if you are working on integrating novel words into captions, I suggest you also check out the following papers:
 
