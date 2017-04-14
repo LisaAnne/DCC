@@ -1,4 +1,4 @@
-Code for:
+#Deep Compositional Captioning
 
 Hendricks, Lisa Anne, et al. "Deep Compositional Captioning: Describing Novel Object Categories without Paired Training Data." CVPR (2016).
 
