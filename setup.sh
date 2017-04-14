@@ -100,10 +100,7 @@ cd $annotation_folder
 for i in "${dcc_data[@]}"
 do 
   echo "Downloading: " $i
-  if [ ! -f $i];
-  then 
-    wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/annotations_DCC/$i
-  fi
+  wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/annotations_DCC/$i
 done
 cd ..
 
@@ -113,10 +110,7 @@ cd $models_folder
 for i in "${dcc_models[@]}"
 do 
   echo "Downloading: " $i
-  if [ ! -f $i];
-  then 
-    wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/trained_models/$i
-  fi
+  wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/trained_models/$i
 done
 cd ..
 
@@ -126,10 +120,7 @@ cd $models_folder
 for i in "${dcc_utils[@]}"
 do 
   echo "Downloading: " $i
-  if [ ! -f $i];
-  then 
-    wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/$i
-  fi
+  wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/$i
 done
 cd ..
 
@@ -144,10 +135,7 @@ cd $models_folder
 for i in "${dcc_sentences[@]}"
 do 
   echo "Downloading: " $i
-  if [ ! -f results/generated_sentences/$i];
-  then 
-    wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/generated_sentences/$i
-  fi
+  wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/generated_sentences/$i
 done
 cd ../..
 
