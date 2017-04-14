@@ -66,6 +66,7 @@ def extract_features(model, model_weights, imagenet_ims=None, device=0, image_di
   #set up feature extractor
   extractor = VisualFeatureExtractor(model, model_weights, device, feature_extract)
   extractor.build_image_processor()
+  feature_size = extractor.net.blobs['probs'].data.shape[1]
 
   for s, set_name in zip(sets, set_names):
     all_ims = s
@@ -76,7 +77,7 @@ def extract_features(model, model_weights, imagenet_ims=None, device=0, image_di
 
       batch_end = min(ix+batch_size, len(all_ims))
       batch_frames = all_ims[ix:batch_end]
-      extractor.extract_batch_features(batch_frames)
+      features_av = extractor.extract_batch_features(batch_frames)
       features[ix:ix+features_av.shape[0],:] = features_av
 
     h5_file = '%s/%s_feats.%s.%s.h5' %(feature_dir, net_type, save_h5, set_name)
