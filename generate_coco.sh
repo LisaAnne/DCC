@@ -6,10 +6,11 @@
 
 #These numbers are a bit better than what is reported in the paper
 #model for direct transfer
-deploy_words=dcc_vgg.wtd.prototxt
-model_name=dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
+#deploy_words=dcc_vgg.wtd.prototxt
+#model_name=dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
 #model for delta transfer
-#deploy_words=dcc_vgg.delta.wtd.prototxt
+deploy_words=dcc_vgg.delta.wtd.prototxt
+model_name=dcc_coco_rm1_vgg.delta_iter_5000.transfer_words_coco1.txt_closeness_embedding_delta_1.caffemodel
 #model_name=dcc_coco_rm1_vgg.delta_freezeLM_iter_50000.transfer_words_coco1.txt_closeness_embedding_delta_1.caffemodel
 vocab=vocabulary.txt
 precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel.val_test.h5

@@ -2,8 +2,8 @@
 
 #coco
 model=prototxts/dcc_vgg.delta.wtd.prototxt
-orig_weights=dcc_coco_rm1_vgg.delta_iter_5000
-model_weights=dcc_coco_rm1_vgg.delta_freezeLM_iter_50000
+model_weights=dcc_coco_rm1_vgg.delta_iter_5000
+orig_weights=dcc_coco_rm1_vgg.delta_freezeLM_iter_50000
 orig_attributes='utils/lexicalList/lexicalList_JJ100_NN300_VB100_rmEightCoco1.txt'
 all_attributes='utils/lexicalList/lexicalList_parseCoco_JJ100_NN300_VB100.txt'
 vocab='utils/vocabulary/vocabulary.txt'
