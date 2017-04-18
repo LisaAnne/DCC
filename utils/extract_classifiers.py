@@ -40,6 +40,8 @@ class VisualFeatureExtractor(object):
 
 def extract_features(model, model_weights, imagenet_ims=None, device=0, image_dim=224, feature_extract='probs', batch_size=10):
 
+  net_type = 'vgg'
+
   im_ids_train = open('utils/image_list/coco2014_cocoid.train.txt').readlines()
   im_ids_train = [int(im_id.strip()) for im_id in im_ids_train]
   im_ids_val = open('utils/image_list/coco2014_cocoid.val_val.txt').readlines()
@@ -80,7 +82,7 @@ def extract_features(model, model_weights, imagenet_ims=None, device=0, image_di
       features_av = extractor.extract_batch_features(batch_frames)
       features[ix:ix+features_av.shape[0],:] = features_av
 
-    h5_file = '%s/%s_feats.%s.%s.h5' %(feature_dir, net_type, save_h5, set_name)
+    h5_file = '%s/%s_feats.%s.%s.h5' %(lexical_features_root, net_type, save_h5, set_name)
     f = h5py.File(h5_file, "w")
     print "Printing to %s\n" %h5_file
     all_ims_short = [i.split('/')[-2] + '/' + i.split('/')[-1] for i in all_ims]
