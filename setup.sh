@@ -124,8 +124,6 @@ echo "Downloading: " $i
 wget https://people.eecs.berkeley.edu/~lisa_anne/release_DCC/utils/vectors-cbow-bnc+ukwac+wikipedia.bin
 cd $home_dir 
 
-mv utils/image_list/vectors-cbow-bnc+ukwac+wikipedia.bin dcc_transfer
-
 mkdir -p results/generated_sentences 
 cd results/generated_sentences
 
