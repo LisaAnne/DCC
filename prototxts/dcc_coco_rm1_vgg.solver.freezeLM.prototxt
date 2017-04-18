@@ -1,7 +1,7 @@
 train_net: "prototxts/dcc_coco_rm1_vgg.train.freezeLM.prototxt"
 random_seed: 1701
 average_loss: 100
-snapshot_prefix: "snapshots/dcc_coco_rm1_vgg.freezeLM.prototxt"
+snapshot_prefix: "snapshots/dcc_coco_rm1_vgg.delta_freezeLM"
 clip_gradients: 10
 max_iter: 110000
 stepsize: 20000

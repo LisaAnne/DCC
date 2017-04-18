@@ -2,4 +2,4 @@
 
 export PYTHONPATH='utils/:$PYTHONPATH'
 
-caffe/python/train.py --solver prototxts/dcc_coco_baseline_vgg.solver.prototxt --weights trained_models/language_models/mrnn.direct_iter_110000.caffemodel --gpu 0
+caffe/python/train.py --solver prototxts/dcc_coco_baseline_vgg.solver.prototxt --weights snapshots/mrnn.direct_iter_110000.caffemodel --gpu 0

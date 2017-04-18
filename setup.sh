@@ -63,6 +63,7 @@ if [ $download_mscoco_annotations -eq 1 ]
     wget http://msvocds.blob.core.windows.net/$mscoco_annotation_file
     unzip captions_train-val2014.zip 
     mv annotations/* $annotation_folder
+    rm captions_train-val2014.zip
   else
     echo "Not downloading MSCOCO annotations."
 fi
@@ -78,6 +79,8 @@ if [ $download_mscoco_images -eq 1 ]
     unzip val2014.zip
     mv train2014 $image_folder
     mv val2014 $image_folder 
+    rm train2014.zip
+    rm val2014.zip
   else
     echo "Not downloading MSCOCO images."
 fi

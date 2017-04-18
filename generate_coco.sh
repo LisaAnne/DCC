@@ -1,29 +1,33 @@
 #!/usr/bin/env bash
 
-#coco
-
 #This will generate results when using in domain data for transfer using the direct transfer method.
 
-#These numbers are a bit better than what is reported in the paper
-#model for direct transfer
-#deploy_words=dcc_vgg.wtd.prototxt
-#model_name=dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
-#model for delta transfer
-deploy_words=dcc_vgg.delta.wtd.prototxt
-model_name=dcc_coco_rm1_vgg.delta_iter_5000.transfer_words_coco1.txt_closeness_embedding_delta_1.caffemodel
-#model_name=dcc_coco_rm1_vgg.delta_freezeLM_iter_50000.transfer_words_coco1.txt_closeness_embedding_delta_1.caffemodel
+#IN DOMAIN DIRECT TRANSFER
+deploy_words=dcc_vgg.wtd.prototxt
+model_name=dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
+>>>>>>> can train all models!
 vocab=vocabulary.txt
 precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel.val_test.h5
 
+#IN DOMAIN DELTA TRANSFER
+#deploy_words=dcc_vgg.delta.wtd.prototxt
+#model_name=dcc_coco_rm1_vgg.delta_freezeLM_iter_50000.transfer_words_coco1.txt_closeness_embedding_delta_1.caffemodel
+#vocab=vocabulary.txt
+#precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel.val_test.h5
+
+
 #To generate result using out of domain for transfer:
 
-#For models trained with out of domain text (vocabulary is larger than coco vocab) you will want to use the following deploy and vocab
+#OUT OF DOMAIN IMAGE, OUT OF DOMAIN LANGUAGE (IM2TXT)
 #deploy_words=dcc_vgg.80k.wtd.prototxt
 #vocab=yt_coco_surface_80k_vocab.txt
-#You will also need to use a different model to train with out of domain text.
 #model_name=dcc_oodLM_rm1_vgg.im2txt.471.solver_0409_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
+#precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.val_test.h5
+
+#OUT OF DOMAIN IMAGE, OUT OF DOMAIN LANGUAGE (IM2TXT)
+#deploy_words=dcc_vgg.80k.wtd.prototxt
+#vocab=yt_coco_surface_80k_vocab.txt
 #model_name=dcc_oodLM_rm1_vgg.surf.471.solver_0409_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
-#To generate results when image model is trained with out of domain image data
 #precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.val_test.h5
 
 #change to "val_val" to eval on validation set

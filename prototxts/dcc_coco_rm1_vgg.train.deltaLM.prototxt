@@ -91,7 +91,7 @@ layer {
 layer {
   name: "reshape-fc8"
   type: "Reshape"
-  bottom: "features"
+  bottom: "data"
   top: "reshape-fc8"
   reshape_param{
     shape{
