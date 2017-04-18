@@ -168,7 +168,7 @@ layer {
   }
 }
 layer {
-  name: "predict"
+  name: "probs"
   type: "Softmax"
   bottom: "predict-multimodal"
   top: "predict"
