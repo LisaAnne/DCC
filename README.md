@@ -92,5 +92,5 @@ If you have a paper in which you compare to DCC, let me know and I will add it t
 
 Please contact lisa_anne@berkeley.edu if you have any issues.  Happy captioning!
 
-Updated 4/14/2016
+Updated 4/18/2016
 
