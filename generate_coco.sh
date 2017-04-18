@@ -5,7 +5,6 @@
 #IN DOMAIN DIRECT TRANSFER
 deploy_words=dcc_vgg.wtd.prototxt
 model_name=dcc_coco_rm1_vgg.471.solver.prototxt_iter_110000.transfer_words_coco1.txt_closeness_embedding.caffemodel
->>>>>>> can train all models!
 vocab=vocabulary.txt
 precomputed_feats=vgg_feats.attributes_JJ100_NN300_VB100_coco_471_eightCluster_0223_iter_80000.caffemodel.val_test.h5
 
