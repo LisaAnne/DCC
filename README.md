@@ -22,7 +22,7 @@ You should be able to replicate my results using this code.  I am still actively
 To use my code, please make sure you have the following: 
 
 1. Lisa Anne Hendricks' branch of Caffe installed: "https://github.com/LisaAnne/lisa-caffe-public/tree/master".  My code will probably work well with other Caffe versions, but I have tested on this version.
-2. All data/models can be downloaded with setub.sh.
+2. All data/models can be downloaded with setup.sh.
 3. Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge. To see which images I used, look at "utils/all_imagenet_images.txt" which includes path to imagenet image and label I used when training.
 
 To begin, please run: ./setup.sh
@@ -33,7 +33,7 @@ My script assumes that you have already downloaded MSCOCO description annotation
 	--download_mscoco_images: downloads mscoco images to images/coco_images.
 	--download_mscoco_tools: downloads mscoco eval tools to utils/coco_tools.
 
-The script will also download my annotations used for my zero-shot splits, my models, and run the transfer code so you can describe novel objects.
+The script will also download my annotations used for my zero-shot splits and my models (before transfer).  **Note -- to replicate my results you will need to run transfer.sh and transfer_delta.sh as described in the next few steps*.
 
 Next, copy "utils/config.example.py" to "utils/config.py" and make sure all paths match the paths on your machine.  In particular, you will need to indicate the path to your caffe directory, the MSCOCO dataset and evaluation toolbox (if you did not download these using setup.sh), and imagenet images.
 
