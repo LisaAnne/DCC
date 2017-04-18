@@ -49,7 +49,7 @@ Please look at "GenerateDescriptions.ipynb" for an example.  Some details follow
 	- "attributes_JJ100_NN300_VB100_clusterEight_imagenet_vgg_0112_iter_80000.caffemode": image model trained with MSCOCO images EXCEPT for objects which are held outduring paired training.  These categories are trained with ImageNet data.
 	- "vgg_multilabel_FT_iter_100000.caffemodel":  image model trained on all MSCOCO images and over 600 ImageNet objects not in MSCOCO
 
-	The code to train these models will be coming soon, but you can use all my pretrained models. 
+	The code to train these models will be coming soon, but you can use all my pretrained models.  Use "./extract_features.sh" to extract image features for MSCOCO. 
 
 2.  The next step in DCC is to train language models.
 	- "mrnn.direct_iter_110000.caffemodel": language model trained on MSCOCO text
