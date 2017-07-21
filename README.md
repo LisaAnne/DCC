@@ -85,6 +85,9 @@ Finally, if you are working on integrating novel words into captions, I suggest 
 
 [Captioning Images with Diverse Objects](https://arxiv.org/abs/1511.05284) **Oral CVPR 2017**
 
+[Incorporating Copying Mechanism in Image Captioning
+for Learning Novel Objects] (http://openaccess.thecvf.com/content_cvpr_2017/papers/Yao_Incorporating_Copying_Mechanism_CVPR_2017_paper.pdf) **CVPR 2017**
+
 [Guided Open Vocabulary Image Captioning with Constrained Beam Search](https://arxiv.org/abs/1612.00576)
 
 If you have a paper in which you compare to DCC, let me know and I will add it to this list.
