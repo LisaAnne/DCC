@@ -88,12 +88,14 @@ Finally, if you are working on integrating novel words into captions, I suggest 
 [Incorporating Copying Mechanism in Image Captioning
 for Learning Novel Objects](http://openaccess.thecvf.com/content_cvpr_2017/papers/Yao_Incorporating_Copying_Mechanism_CVPR_2017_paper.pdf) **CVPR 2017**
 
-[Guided Open Vocabulary Image Captioning with Constrained Beam Search](https://arxiv.org/abs/1612.00576)
+[Guided Open Vocabulary Image Captioning with Constrained Beam Search](https://arxiv.org/abs/1612.00576) **EMNLP 2017**
+
+[Neural Baby Talk](https://arxiv.org/pdf/1803.09845.pdf) **Spotlight CVPR 2018**
 
 If you have a paper in which you compare to DCC, let me know and I will add it to this list.
 
 
 Please contact lisa_anne@berkeley.edu if you have any issues.  Happy captioning!
 
-Updated 4/18/2016
+Updated 4/08/2018
 
