@@ -92,6 +92,8 @@ for Learning Novel Objects](http://openaccess.thecvf.com/content_cvpr_2017/paper
 
 [Neural Baby Talk](https://arxiv.org/pdf/1803.09845.pdf) **Spotlight CVPR 2018**
 
+[Decoupled Novel Captioner] (https://arxiv.org/pdf/1804.03803.pdf)
+
 If you have a paper in which you compare to DCC, let me know and I will add it to this list.
 
 
