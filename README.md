@@ -91,12 +91,13 @@ for Learning Novel Objects](http://openaccess.thecvf.com/content_cvpr_2017/paper
 
 [Neural Baby Talk](https://arxiv.org/pdf/1803.09845.pdf) **Spotlight CVPR 2018**
 
-[Decoupled Novel Captioner](https://arxiv.org/pdf/1804.03803.pdf)
+[Decoupled Novel Captioner](https://arxiv.org/pdf/1804.03803.pdf) **ACM MM 2018**
+
+[Partially Supervised Image Captioning](https://arxiv.org/pdf/1806.06004.pdf) **NIPS 2018**
 
 If you have a paper in which you compare to DCC, let me know and I will add it to this list.
 
-
 Please contact lisa_anne@berkeley.edu if you have any issues.  Happy captioning!
 
-Updated 4/08/2018
+Updated 1/03/2019
 
