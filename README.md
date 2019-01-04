@@ -15,8 +15,7 @@ Hendricks, Lisa Anne, et al. "Deep Compositional Captioning: Describing Novel Ob
 
 License: BSD 2-Clause license
 
-You should be able to replicate my results using this code.  I am still actively adding to it, so if something is unclear email me.
-
+You should be able to replicate my results using this code.  Please let me know if you have any questions.
 ## Setting Up
 
 To use my code, please make sure you have the following: 
