@@ -40,7 +40,7 @@ Once you have setup your paths, run "transfer.sh" and "transfer_delta.sh" to run
 
 Now that everything is setup, we can evaluate the DCC model.  
 
-Please look at "GenerateDescriptions.ipynb" for an example.  Some details follow:
+Please look at "GenerateDescriptions.ipynb" for an example of how to caption an image.  You do not need to retrain models, and can go directly to steps 5 and 6 if you would like to evaluate models.  Some details follow:
 
 1.  The first step in DCC is to train lexical models which map images to a set of visual concepts (e.g., "sheep", "grass", "stand").
         - "attributes_JJ100_NN300_VB100_allObjects_coco_vgg_0111_iter_80000.caffemodel": image model trained with MSCOCO images
