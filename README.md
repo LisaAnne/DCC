@@ -95,9 +95,11 @@ for Learning Novel Objects](http://openaccess.thecvf.com/content_cvpr_2017/paper
 
 [Partially Supervised Image Captioning](https://arxiv.org/pdf/1806.06004.pdf) **NIPS 2018**
 
+[Image Captioning with Unseen Objects](https://arxiv.org/pdf/1908.00047.pdf)  **Spotlight BMVC 2019**
+
 If you have a paper in which you compare to DCC, let me know and I will add it to this list.
 
 Please contact lisa_anne@berkeley.edu if you have any issues.  Happy captioning!
 
-Updated 1/03/2019
+Updated 8/06/2019
 
