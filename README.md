@@ -21,7 +21,8 @@ You should be able to replicate my results using this code.  Please let me know 
 To use my code, please make sure you have the following: 
 
 1. Lisa Anne Hendricks' branch of Caffe installed: "https://github.com/LisaAnne/lisa-caffe-public/tree/master".  My code will probably work well with other Caffe versions, but I have tested on this version.
-2. All data/models can be downloaded with setup.sh.
+~2. All data/models can be downloaded with setup.sh.~
+2.  After I graduated my website was deleted, so please download data from a drive folder [here](https://drive.google.com/drive/u/1/folders/1ct0KhDW8ZHW4D9pxu0IX1ntTaH-XOAVV).
 3. Optional -- ImageNet dataset (http://image-net.org/download).  For the ImageNet experiments, some classes are outside the 1,000 classes chosen for the ILSVRC challenge. To see which images I used, look at "utils/all_imagenet_images.txt" which includes path to imagenet image and label I used when training.
 
 To begin, please run: ./setup.sh
